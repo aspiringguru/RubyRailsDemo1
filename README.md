@@ -160,3 +160,26 @@ generate table 'article' table in database with columns title (values are text) 
 rails creates 2 files  
 app/models/article.rb    
 db/migrate/xxxxxxxxxxxxxxxxx_create_articles.rb  
+
+https://github.com/aspiringguru/RubyRailsDemo1/tree/381f9c32938b90b5bc40cc93ea1612cf7524d425
+5.5 Running a Migration
+
+```
+rails db:migrate
+```
+creates table in database
+
+5.6 Saving data in the controller
+
+```
+vim app/controllers/articles_controller.rb
+```
+
+http://localhost:3000/articles/new
+complete and submit form
+http://localhost:3000/articles
+```
+ActiveModel::ForbiddenAttributesError in ArticlesController#create
+ActiveModel::ForbiddenAttributesError
+```
+add the private method to app/controllers/articles_controller.rb
