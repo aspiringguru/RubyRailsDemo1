@@ -76,3 +76,51 @@ rails routes | grep articles
 ```
 nb: nil results before adding 'resources :articles' to config/routes.rb
 after adding to config/routes.rb - get routes for articles
+
+
+5.1  Laying down the groundwork
+
+http://localhost:3000/articles/new
+error message in browser
+```
+Routing Error
+uninitialized constant ArticlesController Did you mean? AbstractController
+Rails.root: /mnt/d/2019_working/coding/RubyRailsDemo/blog
+```
+error message in console / logs
+```
+Started GET "/articles/new" for ::1 at 2019-10-08 15:22:47 +1000
+ActionController::RoutingError (uninitialized constant ArticlesController
+  Did you mean?  AbstractController):
+```
+
+```
+rails generate controller Articles
+```
+this creates app/controllers/articles_controller.rb
+now error is different
+error in browser
+```
+Unknown action
+The action 'new' could not be found for ArticlesController
+```
+error in console/log
+```
+Started GET "/articles/new" for ::1 at 2019-10-08 15:25:59 +1000
+(0.1ms)  SELECT sqlite_version(*)
+AbstractController::ActionNotFound (The action 'new' could not be found for ArticlesController):
+```
+add new method inside controller
+now error message is different
+browser error message
+```
+No template for interactive request
+ArticlesController#new is missing a template for request formats: text/html
+```
+console/log error message
+```
+Started GET "/articles/new" for ::1 at 2019-10-08 15:29:06 +1000
+Processing by ArticlesController#new as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 628)
+ActionController::MissingExactTemplate (ArticlesController#new is missing a template for request formats: text/html):
+```
