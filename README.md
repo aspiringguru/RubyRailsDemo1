@@ -134,3 +134,29 @@ vim app/views/articles/new.html.erb
 ```
 add code to generate form & load this url
 http://localhost:3000/articles/new
+
+submitting the form produces error
+```
+Routing Error
+No route matches [POST] "/articles/new"
+Rails.root: /mnt/d/2019_working/coding/RubyRailsDemo/blog
+```
+
+```
+vim app/views/articles/new.html.erb
+#due to no url, POST route goes to /articles/new
+<%= form_with scope: :article, local: true do |form| %>
+#change the form to route POST to
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+```
+
+https://github.com/aspiringguru/RubyRailsDemo1/tree/036959d3b03585efd811cdc63604c5677eed8906
+5.4 Creating the Article model
+
+```
+rails generate model Article title:string text:text
+```
+generate table 'article' table in database with columns title (values are text) and string (values are text).  
+rails creates 2 files  
+app/models/article.rb    
+db/migrate/xxxxxxxxxxxxxxxxx_create_articles.rb  
