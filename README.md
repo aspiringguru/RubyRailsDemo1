@@ -124,3 +124,13 @@ Processing by ArticlesController#new as HTML
 Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 628)
 ActionController::MissingExactTemplate (ArticlesController#new is missing a template for request formats: text/html):
 ```
+
+https://github.com/aspiringguru/RubyRailsDemo1/tree/976c5ff9a9c23e2de13ca89797a97d3856132c4c
+
+5.2 The first form
+
+```
+vim app/views/articles/new.html.erb
+```
+add code to generate form & load this url
+http://localhost:3000/articles/new
